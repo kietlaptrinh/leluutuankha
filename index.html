@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hiro Đây!</title>
+<!-- logo favicon -->
+<link rel="icon" href="./Assets/Img/favicon-32x32.png" type="image/png" />
+
+    <link rel="stylesheet" href="./Assets/style.css" />
+
+    <script src="./Assets/script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- thư viện icon font -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <!-- thư viện TinyMCE từ CDN -->
+    <script src="https://cdn.tiny.cloud/1/pzpl17dgovpzpbp91avnynrg941wsmy4rqsdxvlbubb3prh0/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+    <!-- thư viện AOS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- tích hợp emailJS -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="#" id="logo">
+            <h1>HiRo Đây!</h1>
+          </a>
+        <button id="menu-toggle" class="hamburger">&#9776;</button>
+        
+        <nav id="menu" class="hidden">
+            <button id="close-menu" class="close-btn">&#10005;</button> <!-- Nút X để đóng menu -->
+          <ul>
+            <li><a href="#home">Trang chủ</a></li>
+            <li><a href="#about">Giới thiệu</a></li>
+            <li><a href="#experience">Kinh nghiệm</a></li>
+            <li><a href="#projects">Dự án</a></li>
+            <li><a href="#certifications">Chứng chỉ</a></li>
+            <li><a href="#blog" >Blog</a></li>
+            <li><a href="#contact">Liên hệ</a></li>
+          </ul>
+          <div class="social-links-mobile">
+            <a href="https://www.facebook.com/profile.php?id=100048598234673" target="_blank" class="social-icon">
+              <i class="fab fa-facebook-f"></i> <!-- Icon Facebook -->
+            </a>
+            <a href="https://www.instagram.com/max_book_30" target="_blank" class="social-icon">
+              <i class="fab fa-instagram"></i> <!-- Icon Instagram -->
+            </a>
+            <a href="https://www.linkedin.com/in/le-luu-tuan-kha-829926228/" target="_blank" class="social-icon">
+              <i class="fab fa-linkedin-in"></i> <!-- Icon LinkedIn -->
+            </a>
+            <a href="https://www.tiktok.com/@Kha_Le_2ca5" target="_blank" class="social-icon">
+              <i class="fab fa-tiktok"></i> <!-- Icon TikTok -->
+            </a>
+          </div>
+        </nav>
+        <button id="login-btn"><i class="fas fa-cog"></i></button>
+        <!-- Menu lựa chọn -->
+    <div id="settings-menu" class="settings-menu">
+      <ul>
+        <li id="login-option" class="fa fa-lock" aria-hidden="true"></li>
+        <li id="theme-option" class="fa fa-moon" aria-hidden="true"></li>
+      </ul>
+    </div>
+        
+      </div>
+    </header>
+
+    <main class="layout">
+      <div class="left-column">
+        <section id="home" class="section">
+          <h2 class="h2-home">
+            Xin chào mọi người! Cảm ơn mọi 
+            người vì đã ghé thăm chiếc blog của 
+              mình! Đây là nơi để mình chia sẻ và kết nối với các bạn.
+          </h2>
+        <section id="slider" class="slider">
+          <div class="slides">
+            <!-- Các slide sẽ được thêm vào động ở đây -->
+          </div>
+          <!-- Nút điều hướng giữa các slide -->
+          <button class="prev" onclick="prevSlide()">&#10094;</button>
+          <button class="next" onclick="nextSlide()">&#10095;</button>
+        </section>
+        </section>
+
+        <section id="experience" class="section" data-aos="fade-up">
+            <h2 class="section-title">Kinh nghiệm</h2>
+          
+            <!-- Kỹ năng mềm và kỹ năng cứng -->
+            <div class="skills">
+              <div class="skill-category" data-aos="fade-right" data-aos-delay="100">
+                <button class="skill-toggle" onclick="toggleSkillList('soft-skills')">
+                  <i class="fas fa-brain"></i> Kỹ năng mềm
+                </button>
+                <ul id="soft-skills" class="skill-list">
+                  <li><i class="fas fa-comments"></i> Giao tiếp</li>
+                  <li><i class="fas fa-users"></i>  Thuyết trình, trình bày</li>
+                  <li><i class="fas fa-lightbulb"></i> Giải quyết vấn đề</li>
+                  <li><i class="fas fa-clock"></i> Quản lý thời gian</li>
+                </ul>
+              </div>
+          
+              <div class="skill-category" data-aos="fade-left" data-aos-delay="200">
+                <button class="skill-toggle" onclick="toggleSkillList('hard-skills')">
+                  <i class="fas fa-cogs"></i> Kỹ năng cứng
+                </button>
+                <ul id="hard-skills" class="skill-list">
+                    <li><i class="fas fa-image"></i> Thiết Kế Ảnh, Poster cơ bản</li>
+                    <li><i class="fas fa-keyboard"></i> Kỹ năng tin học văn phòng</li>
+                    <li><i class="fas fa-users-cog"></i> Quản Lí Nhóm Nhỏ Và Vừa</li>
+                    <li><i class="fas fa-pen-alt"></i> Viết Lách</li>
+                </ul>
+              </div>
+            </div>
+          
+            <!-- Hành trình con đường học tập và công việc -->
+            <div class="journey" data-aos="fade-up" data-aos-delay="300">
+              <h3>Hành trình học tập và công việc</h3>
+              <div class="journey-item">
+                <p><strong>2023 - hiện tại:</strong> Sinh viên năm 2, Đại học Ngoại ngữ - Đại học Đà Nẵng</p>
+                <p><strong>Chuyên ngành:</strong> Tiếng Anh Thương Mại</p>
+              </div>
+              <div class="journey-item">
+                <p><strong>2022 - hiện tại:</strong> Bán hàng, Tạp Hóa Âu Lạc</p>
+                <p><strong>Vị trí:</strong> Shop Assistant</p>
+              </div>
+              <div class="journey-item">
+                <p><strong>2023 - hiện tại:</strong> Bán hàng, Hiro Store</p>
+                <p><strong>Vị trí:</strong> Founder</p>
+              </div>
+              <div class="journey-item">
+                <p><strong>2023 - 2024:</strong> Định hướng viên, BBE Ember Chapter</p>
+                <p><strong>Vị trí:</strong> Trưởng Ban Định Hướng</p>
+              </div>
+              <div class="journey-item">
+                <p><strong>2022 - 2023:</strong> Thành viên sự kiện, Zero Waste Community Danang - Cộng đồng không rác Đà Nẵng</p>
+                <p><strong>Vị trí:</strong>  Trưởng Ban Sự Kiện</p>
+              </div>
+              <div class="journey-item">
+                <p><strong>2024 - hiện tại:</strong> Tình nguyện, Giải Triathlon Vinfast Ironman, Lễ hội bóng đá Brazil - Việt Nam, Chiến dịch
+                    ra quân Clean Up Đà nẵng, Chiến dịch tiếp sức mùa thi</p>
+                <p><strong>Vị trí:</strong> Tình nguyện viên</p>
+              </div>
+              <div class="journey-item">
+                <p><strong>2023:</strong> Người quản trò, Yourdreams - JCI Da Nang</p>
+                <p><strong>Vị trí:</strong> Quản Trò Liên Hoàn</p>
+              </div>
+              
+            </div>
+          </section>
+          
+          
+          
+          <!-- DỰ ÁN  -->
+          <section id="projects">
+            <h2>Các Dự Án Nổi Bật</h2>
+            <!-- Dự án 1 -->
+            <div class="project" data-aos="fade-up" data-aos-duration="1000">
+                <h3>Dự Án 1: Dự án Nuôi em - Thừa Thiên Huế</h3>
+                <p><strong>Vai trò:</strong> Sứ giả truyền thông</p>
+                <p><strong>Thời gian:</strong> Tháng 1 2022 - Tháng 6 2022</p>
+                <p><strong>Mục tiêu:</strong> Tạo ra cơ hội học tập cho trẻ em nghèo ở các vùng nông thôn, đặc biệt là học sinh tiểu học và trung học cơ sở.</p>
+                <p><strong>Chiến lược:</strong> Tổ chức các lớp học miễn phí, quyên góp sách vở và tài liệu học tập, tạo các nhóm tình nguyện viên hỗ trợ giáo dục.</p>
+                <p><strong>Kết quả:</strong> Hơn 500 trẻ em được tham gia, giúp cải thiện khả năng đọc và viết cho các em, và có hơn 10.000 cuốn sách đã được quyên góp.</p>
+                <p><a href="https://www.facebook.com/share/p/15RsyLdTgh/" target="_blank">Xem thêm về dự án</a></p>
+                <img src="./Assets/Img/snapedit_1736174627132.jpeg" alt="Giáo dục cho trẻ em nghèo">
+            </div>
+        
+            <!-- Dự án 2 -->
+            <div class="project" data-aos="fade-up" data-aos-duration="1200">
+                <h3>Dự Án 2: Chiến Dịch Giảm Thiểu Rác Thải Nhựa</h3>
+                <p><strong>Vai trò:</strong> Người tổ chức chiến dịch</p>
+                <p><strong>Thời gian:</strong> Tháng 7 2021 - Tháng 12 2021</p>
+                <p><strong>Mục tiêu:</strong> Nâng cao nhận thức về ô nhiễm nhựa và khuyến khích việc tái chế và sử dụng các sản phẩm thân thiện với môi trường.</p>
+                <p><strong>Chiến lược:</strong> Tổ chức các cuộc thi sáng tạo, chiến dịch tuyên truyền trên mạng xã hội, tổ chức các buổi hội thảo về bảo vệ môi trường.</p>
+                <p><strong>Kết quả:</strong> Thu hút hơn 10.000 người tham gia chiến dịch, thu gom và tái chế hơn 2 tấn rác thải nhựa.</p>
+                <p><a href="https://example.com" target="_blank">Xem thêm về chiến dịch</a></p>
+                <img src="project-image2.jpg" alt="Giảm thiểu rác thải nhựa">
+            </div>
+        </section>
+        
+
+
+        <!-- CHỨNG CHỈ -->
+        <section id="certifications" class="section">
+            <h2>Chứng Chỉ</h2>
+            <p>Danh sách chứng chỉ của tôi trong các lĩnh vực hoạt động xã hội, phát triển cộng đồng và quản lý.</p>
+            <div class="certification-container">
+                <!-- Certification Item 1 -->
+                <div class="certification aos-init" data-aos="fade-up">
+                    <img src="./Assets/Img/certifiTeenageStartupCamp.png" alt="Ảnh Chứng chỉ" class="certification-image">
+                    <div class="certification-info">
+                        <h3>Chứng chỉ Quản Lý Dự Án</h3>
+                        <p><strong>Đơn vị cấp:</strong> Trường Đại học ABC</p>
+                        <p><strong>Ngày cấp:</strong> Tháng 5, 2023</p>
+                        <p><strong>Mô tả:</strong> Chứng chỉ này công nhận khả năng quản lý và điều hành các dự án quy mô lớn trong cộng đồng.</p>
+                        <p><strong>Cấp độ:</strong> Chuyên gia</p>
+                        <p><strong>Địa điểm:</strong> Hà Nội, Việt Nam</p>
+                        <a href="path/to/certificate-link" target="_blank">Tìm hiểu thêm</a>
+                    </div>
+                </div>
+                
+                <!-- Certification Item 2 -->
+                <div class="certification aos-init" data-aos="fade-up" data-aos-delay="100">
+                    <img src="path/to/certificate2.jpg" alt="Chứng chỉ 2" class="certification-image">
+                    <div class="certification-info">
+                        <h3>Chứng chỉ Lãnh Đạo trong Cộng Đồng</h3>
+                        <p><strong>Đơn vị cấp:</strong> Tổ chức XYZ</p>
+                        <p><strong>Ngày cấp:</strong> Tháng 8, 2022</p>
+                        <p><strong>Mô tả:</strong> Chứng chỉ này giúp tôi phát triển các kỹ năng lãnh đạo và truyền cảm hứng trong các dự án cộng đồng.</p>
+                        <p><strong>Cấp độ:</strong> Trưởng nhóm</p>
+                        <p><strong>Địa điểm:</strong> Thành phố Hồ Chí Minh, Việt Nam</p>
+                        <a href="path/to/certificate-link" target="_blank">Tìm hiểu thêm</a>
+                    </div>
+                </div>
+        
+                <!-- Certification Item 3 -->
+                <div class="certification aos-init" data-aos="fade-up" data-aos-delay="200">
+                    <img src="path/to/certificate3.jpg" alt="Chứng chỉ 3" class="certification-image">
+                    <div class="certification-info">
+                        <h3>Chứng chỉ Tư Vấn Phát Triển Cộng Đồng</h3>
+                        <p><strong>Đơn vị cấp:</strong> Tổ chức XYZ</p>
+                        <p><strong>Ngày cấp:</strong> Tháng 10, 2021</p>
+                        <p><strong>Mô tả:</strong> Đây là chứng chỉ cho thấy tôi có đủ khả năng tư vấn và phát triển các chương trình phát triển cộng đồng hiệu quả.</p>
+                        <p><strong>Cấp độ:</strong> Chuyên gia tư vấn</p>
+                        <p><strong>Địa điểm:</strong> Hà Nội, Việt Nam</p>
+                        <a href="path/to/certificate-link" target="_blank">Tìm hiểu thêm</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- BLOG -->
+        <section id="blog" class="section">
+          <h2>Blog</h2>
+          <select id="categorySelect">
+            <option value="">Danh mục blog</option>
+          </select>
+          <div id="blog-container">
+            <!-- Blog posts will be dynamically inserted here -->
+          </div>
+        </section>
+        <section id="contact" class="section">
+            <h2>Liên hệ</h2>
+            <p>Chúng tôi rất mong nhận được phản hồi từ bạn.</p>
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="name" class="cssLabel">Tên*</label>
+                <input type="text" name="name" id="name" placeholder="Xin chào! Tên bạn là?" required>
+              </div>
+              <div class="form-group">
+                <label for="email" class="cssLabel">Email*</label>
+                <input type="email" name="email" id="email" placeholder="Nhập email của bạn" required>
+              </div>
+              <div class="form-group">
+                <label for="subject" class="cssLabel">Tiêu đề</label>
+                <input type="text" name="subject" id="subject" required>
+              </div>
+              <div class="form-group">
+                <label for="message" class="cssLabel">Nội dung*</label>
+                <textarea name="message" id="message" rows="4" required></textarea>
+              </div>
+              <button class="buttonSubmit" type="submit">Gửi Tin Nhắn</button>
+            </form>
+            
+            <!-- Google Maps -->
+    <div id="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61346.013886154025!2d108.17078972979485!3d16.05895691227004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314219b5c59ecec1%3A0xfd2900156004319!2zSOG6o2kgQ2jDonUsIMSQw6AgTuG6tW5nLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1736174399015!5m2!1svi!2s" width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+             </section>
+      </div>
+      <aside class="right-column">
+        <section id="about" class="about-section">
+          <h2>ĐỪNG NGẠI HỎI MÌNH NHÉ!</h2>
+          <hr class="red-line" />
+          <div class="search-container">
+            <input type="text" id="search-input" placeholder="Tìm kiếm với từ khóa..." /><button id="search-btn">Tìm</button>
+        </div>
+            <ul id="search-suggestions"></ul>
+          </div>
+          
+
+          <div class="profile">
+            <img
+              src="./Assets/Img/snapedit_1735832308765.jpeg"
+              alt="Ảnh đại diện"
+              class="profile-pic"
+            />
+            <p>
+              Tên mình là Tuấn Kha, sinh viên năm 2 tại Đại học Ngoại ngữ, Đại
+              học Đà Nẵng, ở vùng đất Đà Thành đầy nắng gió và những cơn mưa bất
+              chợt. Dù chỉ là một người bình thường, mình luôn khao khát làm
+              những điều phi thường để truyền cảm hứng và giúp các bạn trẻ có
+              thêm động lực học tập, phát triển bản thân. Trên hành trình đó,
+              mình không ngừng học hỏi, làm việc và tích lũy những trải nghiệm
+              quý giá. Hãy cùng mình khám phá những vùng đất mới và những câu
+              chuyện thú vị phía trước nhé!
+            </p>
+          </div>
+
+          <div class="photo-album">
+            <h3>Album ảnh</h3>
+            <div class="album-grid">
+              <!-- Add photos here -->
+              <img src="./Assets/Img/IMG_2799.jpg" alt="Photo 1" />
+              <img src="./Assets/Img/IMG_2795.JPG" alt="Photo 2" />
+              <img src="./Assets/Img/IMG_3456.JPG" alt="Photo 2" />
+              <img src="./Assets/Img/IMG_3455.JPG" alt="Photo 1" />
+              <img src="./Assets/Img/IMG_0322.JPG" alt="Photo 3" />
+              <img src="./Assets/Img/IMG_2418.JPG" alt="Photo 3" />
+            </div>
+          </div>
+        </section>
+      </aside>
+    </main>
+
+    <!-- Modal Đăng nhập -->
+<div id="login-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="close-login-modal">&times;</span>
+      <h2>Admin đăng nhập</h2>
+      <form id="login-form">
+        <label for="username">Tên đăng nhập:</label>
+        <input type="text" id="username" name="username" placeholder="Nhập tên đăng nhập" required />
+        <label for="password">Mật khẩu:</label>
+        <input type="password" id="password" name="password" placeholder="Nhập mật khẩu" required />
+        <button type="submit">Đăng nhập</button>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Form thêm bài viết -->
+  <div id="blog-editor-modal" class="modal" style="display:none;">
+    <div class="modal-content">
+        
+      <span class="close-btn" id="close-editor-modal">&times;</span>
+      <form id="blogForm" method="POST" enctype="multipart/form-data">
+        <label for="title">Tiêu đề:</label>
+        <input type="text" id="title" name="title" placeholder="Nhập tiêu đề không quá dài!" required>
+    
+        <label for="content">Nội dung:</label>
+        <textarea id="content" name="content" placeholder="Nhập nội dung không quá dài!"  required></textarea>
+    
+        <label for="category">Danh mục:</label>
+        <input type="text" id="category" placeholder="Chọn danh mục đã có hoặc tạo mới" name="category">
+    
+        <label for="image">Hình ảnh:</label>
+        <input type="file" id="image" name="image">
+    
+        <label for="status">Trạng thái:</label>
+        <select id="status" name="status">
+            <option value="draft">Bản nháp</option>
+            <option value="published">Xuất bản</option>
+        </select>
+    
+        <button type="submit">Tạo bài viết</button>
+    </form>
+    <script src="https://cdn.tiny.cloud/1/pzpl17dgovpzpbp91avnynrg941wsmy4rqsdxvlbubb3prh0/tinymce/7/tinymce.min.js" referrerpolicy="origin">
+
+    </script>
+    </div>
+  </div>
+
+ 
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-container">
+      <!-- Cột 1: Logo và Social Icons -->
+      <div class="footer-column">
+        <h2>Hiro</h2>
+        <hr class="red-line" />
+        <img src="./Assets/Img/logo-hinh-vuong-bee-art-07-fotor-20250104135232.png" alt="Logo" class="footer-logo" />
+        
+        <div class="social-links-footer">
+          <a href="https://www.facebook.com/profile.php?id=100048598234673" target="_blank" class="social-icon">
+            <i class="fab fa-facebook-f"></i> <!-- Icon Facebook -->
+          </a>
+          <a href="Https://www.instagram.com/max_book_30" target="_blank" class="social-icon">
+            <i class="fab fa-instagram"></i> <!-- Icon Instagram -->
+          </a>
+          <a href="https://www.linkedin.com/in/le-luu-tuan-kha-829926228/" target="_blank" class="social-icon">
+            <i class="fab fa-linkedin-in"></i> <!-- Icon LinkedIn -->
+          </a>
+          <a href="https://www.tiktok.com/@Kha_Le_2ca5" target="_blank" class="social-icon">
+            <i class="fab fa-tiktok"></i> <!-- Icon TikTok -->
+          </a>
+        </div>
+      </div>
+  
+      <!-- Cột 2: Câu chuyện và thông tin liên hệ -->
+      <div class="footer-column">
+        <h2>Đừng Ngại Trò Chuyện</h2>
+        <hr class="red-line" />
+        <p>Tớ luôn mong muốn mang lại giá trị cho cộng đồng. Hiro là nơi bạn tìm thấy những trải nghiệm tuyệt vời.</p>
+        <h4>Thông tin liên hệ</h4>
+        <p>- Email: leluutuankha@gmail.com</p>
+        <p>- Điện thoại: 0904017116</p>
+      </div>
+  
+      <!-- Cột 3: Chức năng của Header -->
+      <div class="footer-column">
+        <h2>Tìm hiểu về tớ</h2>
+        <hr class="red-line" />
+        <ul>
+          <li><a href="#home">Trang chủ</a></li>
+          <li><a href="#about">Giới thiệu</a></li>
+          <li><a href="#experience">Kinh nghiệm</a></li>
+          <li><a href="#services">Dịch vụ</a></li>
+          <li><a href="#projects">Dự án</a></li>
+          <li><a href="#certifications">Chứng chỉ</a></li>
+          <li><a href="#blog">Blog</a></li>
+        </ul>
+      </div>
+    </div>
+    <p>Copyright 2025 &copy; <a href="https://zalo.me/0702664640" target="_blank" class="kietlaptrinh"><strong>kietlaptrinh</strong></a></p>
+
+  </footer>
+  
+    <!-- Thêm thư viện AOS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    easing: 'ease-in-out-sine',
+    duration: 1000,
+    
+  });
+</script>
+
+
+<!-- TÍCH HỢP EMAILJS -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+  // Initialize EmailJS
+  (function() {
+    emailjs.init("cQMjiXxpFVYuEic_s");
+  })();
+  // Handle form submission
+  document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the form from submitting normally
+
+    let parms = {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      subject: document.getElementById("subject").value,
+      message: document.getElementById("message").value,
+    };
+
+    // Send the email using EmailJS
+    emailjs.send("service_rpg9neh", "template_01ekofa", parms)
+      .then(function(response) {
+        alert("Email Sent!");
+      }, function(error) {
+        alert("Error: " + error.text);
+      });
+  });
+</script>
+
+<script>
+  // Khởi tạo TinyMCE cho textarea "content"
+  tinymce.init({
+    selector: '#content',  // Chọn textarea có id là 'content'
+    plugins: 'advlist autolink lists link image charmap preview anchor help', // Các plugin cơ bản
+    toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help', // Các nút công cụ cơ bản
+    branding: false, // Tắt logo TinyMCE
+    setup: function(editor) {
+      editor.on('change', function() {
+        // Cập nhật giá trị của textarea với nội dung TinyMCE
+        tinymce.triggerSave();
+      });
+    }
+  });
+</script>
+
+
+  </body>
+</html>
